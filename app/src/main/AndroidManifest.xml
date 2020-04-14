@@ -9,15 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CartActivity"
-            android:theme="@style/AppTheme.Material">
-
-        </activity>
+        <activity
+            android:name=".DrawerMainActivity"
+            android:label="@string/title_activity_drawer_main"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".CartActivity"
+            android:theme="@style/AppTheme.Material"></activity>
         <activity
             android:name=".PopupJenisActivity"
-            android:theme="@style/AppTheme.Material_Transparent">
-
-        </activity>
+            android:theme="@style/AppTheme.Material_Transparent"></activity>
         <activity android:name=".JenisActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
