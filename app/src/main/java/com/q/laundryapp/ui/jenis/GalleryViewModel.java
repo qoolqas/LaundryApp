@@ -1,4 +1,4 @@
-package com.q.laundryapp.ui.gallery;
+package com.q.laundryapp.ui.jenis;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
