@@ -12,39 +12,26 @@
         tools:layout="@layout/fragment_home">
 
         <action
-            android:id="@+id/action_HomeFragment_to_HomeSecondFragment"
-            app:destination="@id/nav_home_second" />
-        <action
             android:id="@+id/action_nav_home_to_nav_gallery"
             app:destination="@id/nav_gallery"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
-    </fragment>
-    <fragment
-        android:id="@+id/nav_home_second"
-        android:name="com.q.laundryapp.ui.home.HomeSecondFragment"
-        android:label="@string/home_second"
-        tools:layout="@layout/fragment_home_second">
         <action
-            android:id="@+id/action_HomeSecondFragment_to_HomeFragment"
-            app:destination="@id/nav_home" />
-
-        <argument
-            android:name="myArg"
-            app:argType="string" />
+            android:id="@+id/action_nav_home_to_nav_slideshow"
+            app:destination="@id/nav_slideshow" />
     </fragment>
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.q.laundryapp.ui.jenis.JenisFragment"
+        android:name="com.q.laundryapp.ui.status.JenisFragment"
         android:label="@string/menu_jenis"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.q.laundryapp.ui.slideshow.SlideshowFragment"
+        android:name="com.q.laundryapp.ui.ambil.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.q.laundryapp.ui.slideshow;
+package com.q.laundryapp.ui.ambil;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

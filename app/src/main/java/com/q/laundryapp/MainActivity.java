@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        cardTransaksi = findViewById(R.id.cardTransaksi);
+        cardTransaksi = findViewById(R.id.home_buat);
         cardTransaksi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

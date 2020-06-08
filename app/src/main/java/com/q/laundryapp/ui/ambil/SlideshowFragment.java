@@ -1,4 +1,4 @@
-package com.q.laundryapp.ui.slideshow;
+package com.q.laundryapp.ui.ambil;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
