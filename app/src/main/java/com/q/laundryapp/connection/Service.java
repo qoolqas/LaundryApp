@@ -22,11 +22,11 @@ import retrofit2.http.Query;
 public interface Service {
 
 
-    @GET("read.php")
-    Call<ProdukResponse> getProduk();
-
-    @GET("read.php")
-    Call<ProdukResponse> getProdukKategori(@Query("kategori") String kategori);
+//    @GET("read.php")
+//    Call<ProdukResponse> getProduk();
+//
+//    @GET("read.php")
+//    Call<ProdukResponse> getProdukKategori(@Query("kategori") String kategori);
 
     @FormUrlEncoded
     @POST("login.php")
@@ -43,41 +43,41 @@ public interface Service {
             @Field("alamat") String alamat
     );
 
-    @DELETE("delete.php")
-    Call<DeleteResponse> delete(@Query("produk_id") String id);
-
-    @Multipart
-    @POST("create.php")
-    Call<CreateResponse> create(
-            @Part("nama") RequestBody nama,
-            @Part("rating") RequestBody rating,
-            @Part("harga") RequestBody harga,
-            @Part("kategori") RequestBody kategori,
-            @Part("deskripsi") RequestBody deskripsi,
-            @PartMap Map<String, RequestBody> map
-    );
-
-    @Multipart
-    @POST("update.php")
-    Call<EditResponse> update(
-            @Part("nama") RequestBody nama,
-            @Part("rating") RequestBody rating,
-            @Part("harga") RequestBody harga,
-            @Part("kategori") RequestBody kategori,
-            @Part("deskripsi") RequestBody deskripsi,
-            @Part("produk_id") RequestBody id,
-            @PartMap Map<String, RequestBody> map
-    );
-
-    @Multipart
-    @POST("update.php")
-    Call<EditResponse> updateNo(
-            @Part("nama") RequestBody nama,
-            @Part("rating") RequestBody rating,
-            @Part("harga") RequestBody harga,
-            @Part("kategori") RequestBody kategori,
-            @Part("deskripsi") RequestBody deskripsi,
-            @Part("produk_id") RequestBody id
-    );
+//    @DELETE("delete.php")
+//    Call<DeleteResponse> delete(@Query("produk_id") String id);
+//
+//    @Multipart
+//    @POST("create.php")
+//    Call<CreateResponse> create(
+//            @Part("nama") RequestBody nama,
+//            @Part("rating") RequestBody rating,
+//            @Part("harga") RequestBody harga,
+//            @Part("kategori") RequestBody kategori,
+//            @Part("deskripsi") RequestBody deskripsi,
+//            @PartMap Map<String, RequestBody> map
+//    );
+//
+//    @Multipart
+//    @POST("update.php")
+//    Call<EditResponse> update(
+//            @Part("nama") RequestBody nama,
+//            @Part("rating") RequestBody rating,
+//            @Part("harga") RequestBody harga,
+//            @Part("kategori") RequestBody kategori,
+//            @Part("deskripsi") RequestBody deskripsi,
+//            @Part("produk_id") RequestBody id,
+//            @PartMap Map<String, RequestBody> map
+//    );
+//
+//    @Multipart
+//    @POST("update.php")
+//    Call<EditResponse> updateNo(
+//            @Part("nama") RequestBody nama,
+//            @Part("rating") RequestBody rating,
+//            @Part("harga") RequestBody harga,
+//            @Part("kategori") RequestBody kategori,
+//            @Part("deskripsi") RequestBody deskripsi,
+//            @Part("produk_id") RequestBody id
+//    );
 
 }
