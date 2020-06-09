@@ -15,13 +15,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        cardTransaksi = findViewById(R.id.home_buat);
-        cardTransaksi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, JenisActivity.class);
-                startActivity(intent);
-            }
-        });
+//        cardTransaksi = findViewById(R.id.home_buat);
+//        cardTransaksi.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(MainActivity.this, JenisActivity.class);
+//                startActivity(intent);
+//            }
+//        });
     }
 }

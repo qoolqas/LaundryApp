@@ -20,7 +20,11 @@
             app:popExitAnim="@anim/slide_out_right"/>
         <action
             android:id="@+id/action_nav_home_to_nav_slideshow"
-            app:destination="@id/nav_slideshow" />
+            app:destination="@id/nav_slideshow"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
 
     <fragment
@@ -31,7 +35,7 @@
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.q.laundryapp.ui.ambil.SlideshowFragment"
+        android:name="com.q.laundryapp.ui.ambil.AmbilFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
 </navigation>

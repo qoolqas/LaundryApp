@@ -2,7 +2,7 @@ package com.q.laundryapp.model.read;
 
 import com.google.gson.annotations.SerializedName;
 
-public class ResultItem{
+public class ProdukModel {
 
 	@SerializedName("per_harga")
 	private String perHarga;
@@ -165,8 +165,8 @@ public class ResultItem{
 			"per_harga = '" + perHarga + '\'' + 
 			",tambahan = '" + tambahan + '\'' + 
 			",catatan = '" + catatan + '\'' + 
-			",created_at = '" + createdAt + '\'' + 
-			",history = '" + history + '\'' + 
+			",created_at = '" + createdAt + '\'' +
+			",history = '" + history + '\'' +
 			",alamat = '" + alamat + '\'' + 
 			",total = '" + total + '\'' + 
 			",nama = '" + nama + '\'' + 

@@ -22,8 +22,8 @@ public class HomeFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_home, container, false);
-        CardView cardStatus = root.findViewById(R.id.home_status);
-        cardStatus.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_nav_home_to_nav_gallery, null));
+        CardView cardAmbil = root.findViewById(R.id.home_ambil);
+        cardAmbil.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_nav_home_to_nav_slideshow, null));
 
         return root;
     }

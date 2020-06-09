@@ -6,13 +6,13 @@ import com.google.gson.annotations.SerializedName;
 public class ProdukResponse {
 
 	@SerializedName("result")
-	private List<ResultItem> result;
+	private List<ProdukModel> result;
 
-	public void setResult(List<ResultItem> result){
+	public void setResult(List<ProdukModel> result){
 		this.result = result;
 	}
 
-	public List<ResultItem> getResult(){
+	public List<ProdukModel> getResult(){
 		return result;
 	}
 

@@ -23,4 +23,6 @@
     <string name="sign_in">Sign In</string>
     <string name="logo">logo</string>
     <string name="email">Email</string>
+    <string name="msg_success">Success</string>
+    <string name="msg_gagal">Gagal</string>
 </resources>
