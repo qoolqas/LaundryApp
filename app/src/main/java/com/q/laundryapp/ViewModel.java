@@ -44,7 +44,7 @@ public class ViewModel extends androidx.lifecycle.ViewModel {
         }
         return produk;
     }
-    void loadBasah() {
+    public void loadBasah() {
 
         Service service = Client.getClient().create(Service.class);
         Call<ProdukResponse> call = service.getStatus("0");

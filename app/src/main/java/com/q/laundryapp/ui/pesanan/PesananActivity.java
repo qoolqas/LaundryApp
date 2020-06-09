@@ -16,6 +16,7 @@ import com.q.laundryapp.R;
 import com.q.laundryapp.connection.Client;
 import com.q.laundryapp.connection.Service;
 import com.q.laundryapp.model.create.CreateResponse;
+import com.q.laundryapp.model.edit.EditResponse;
 import com.q.laundryapp.model.read.ProdukModel;
 
 import org.jetbrains.annotations.NotNull;
@@ -96,10 +97,61 @@ public class PesananActivity extends AppCompatActivity {
 
     //endregion
     private void setEdit() {
-
+        nama.setText(produkModel.getNama());
+        handphone.setText(produkModel.getTelfon());
+        alamat.setText(produkModel.getAlamat());
+        berat.setText(produkModel.getBerat());
+        tambahan.setText(produkModel.getTambahan());
+        catatan.setText(produkModel.getCatatan());
+        if (produkModel.getJenis().equals("Ekspress")) {
+            kategori.check(R.id.rd_ekspress);
+        } else if (produkModel.getJenis().equals("express")){
+            kategori.check(R.id.rd_ekspress);
+        } else {
+            kategori.check(R.id.rd_normal);
+        }
     }
 
     private void editPesanan() {
+        String dataNama = nama.getText().toString();
+        String dataHandphone = handphone.getText().toString();
+        String dataAlamat = alamat.getText().toString();
+        String dataBerat = berat.getText().toString();
+        String dataTambahan = tambahan.getText().toString();
+        String dataCatatan = catatan.getText().toString();
+        double dHarga = Double.parseDouble(per_harga);
+        double dTambahan = Double.parseDouble(dataTambahan);
+        double dBerat = Double.parseDouble(dataBerat);
+        double total = (dHarga * dBerat) + dTambahan;
+        String dataHarga = String.valueOf(total);
+        //jenis
+        Service service = Client.getClient().create(Service.class);
+
+        Call<EditResponse> create = service.update(dataBerat, jenis, dataHarga,dataTambahan,dataCatatan,dataNama,dataAlamat,dataHandphone, produkModel.getStatus(), produkModel.getHistory(), produkModel.getBarangId());
+        create.enqueue(new Callback<EditResponse>() {
+            @Override
+            public void onResponse(@NotNull Call<EditResponse> call, @NotNull Response<EditResponse> response) {
+                if (response.isSuccessful()) {
+                    if (response.body() != null) {
+                        hidepDialog();
+                        Toast.makeText(getApplicationContext(), getString(R.string.msg_success), Toast.LENGTH_SHORT).show();
+                        finish();
+
+                    }
+                } else {
+                    hidepDialog();
+                    Toast.makeText(getApplicationContext(), getString(R.string.msg_gagal), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(@NotNull Call<EditResponse> call, @NotNull Throwable t) {
+                hidepDialog();
+                Log.v("Response gotten is", Objects.requireNonNull(t.getMessage()));
+                Toast.makeText(getApplicationContext(), getString(R.string.msg_gagal) + t.getMessage(), Toast.LENGTH_SHORT).show();
+
+            }
+        });
     }
 
     private void createPesanan() {

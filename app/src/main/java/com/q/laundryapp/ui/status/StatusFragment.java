@@ -81,6 +81,7 @@ public class StatusFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        getData();
+        pb.setVisibility(View.VISIBLE);
+        viewModel.loadBasah();
     }
 }

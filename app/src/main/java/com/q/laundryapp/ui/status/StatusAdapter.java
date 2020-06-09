@@ -120,6 +120,7 @@ public class StatusAdapter extends RecyclerView.Adapter<StatusAdapter.ViewHolder
                                 case R.id.edit:
                                     Intent intent = new Intent(produkActivity.getActivity(), PesananActivity.class);
                                     intent.putExtra("id", String.valueOf(data.getBarangId()));
+                                    intent.putExtra("edit", "1");
                                     intent.putExtra("data", data);
                                     produkActivity.getActivity().startActivity(intent);
                                     return true;
