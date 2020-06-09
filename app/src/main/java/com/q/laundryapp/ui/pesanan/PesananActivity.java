@@ -4,14 +4,27 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.q.laundryapp.R;
+import com.q.laundryapp.connection.Client;
+import com.q.laundryapp.connection.Service;
+import com.q.laundryapp.model.create.CreateResponse;
 import com.q.laundryapp.model.read.ProdukModel;
+
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Objects;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class PesananActivity extends AppCompatActivity {
     ProdukModel produkModel;
@@ -101,6 +114,34 @@ public class PesananActivity extends AppCompatActivity {
         double dBerat = Double.parseDouble(dataBerat);
         double total = (dHarga * dBerat) + dTambahan;
         String dataHarga = String.valueOf(total);
+        //jenis
+        Service service = Client.getClient().create(Service.class);
+
+        Call<CreateResponse> create = service.create(dataBerat, jenis, dataHarga,dataTambahan,dataCatatan,dataNama,dataAlamat,dataHandphone);
+        create.enqueue(new Callback<CreateResponse>() {
+            @Override
+            public void onResponse(@NotNull Call<CreateResponse> call, @NotNull Response<CreateResponse> response) {
+                if (response.isSuccessful()) {
+                    if (response.body() != null) {
+                        hidepDialog();
+                        Toast.makeText(getApplicationContext(), getString(R.string.msg_success), Toast.LENGTH_SHORT).show();
+                        finish();
+
+                    }
+                } else {
+                    hidepDialog();
+                    Toast.makeText(getApplicationContext(), getString(R.string.msg_gagal), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(@NotNull Call<CreateResponse> call, @NotNull Throwable t) {
+                hidepDialog();
+                Log.v("Response gotten is", Objects.requireNonNull(t.getMessage()));
+                Toast.makeText(getApplicationContext(), getString(R.string.msg_gagal) + t.getMessage(), Toast.LENGTH_SHORT).show();
+
+            }
+        });
 
     }
 

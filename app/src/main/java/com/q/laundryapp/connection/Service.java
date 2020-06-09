@@ -54,15 +54,17 @@ public interface Service {
     @DELETE("delete.php")
     Call<DeleteResponse> delete(@Query("barang_id") String id);
 
-    @Multipart
+    @FormUrlEncoded
     @POST("create.php")
     Call<CreateResponse> create(
-            @Part("nama") RequestBody nama,
-            @Part("rating") RequestBody rating,
-            @Part("harga") RequestBody harga,
-            @Part("kategori") RequestBody kategori,
-            @Part("deskripsi") RequestBody deskripsi,
-            @PartMap Map<String, RequestBody> map
+            @Field("berat")String berat,
+            @Field("jenis")String jenis,
+            @Field("per_harga")String per_harga,
+            @Field("tambahan")String tambahan,
+            @Field("catatan")String catatan,
+            @Field("nama")String nama,
+            @Field("alamat")String alamat,
+            @Field("telfon")String telfon
     );
 
     @FormUrlEncoded
