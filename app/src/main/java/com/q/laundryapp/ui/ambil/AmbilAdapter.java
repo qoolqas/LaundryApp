@@ -26,7 +26,12 @@ import com.q.laundryapp.model.delete.DeleteResponse;
 import com.q.laundryapp.model.edit.EditResponse;
 import com.q.laundryapp.model.read.ProdukModel;
 
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -61,8 +66,16 @@ public class AmbilAdapter extends RecyclerView.Adapter<AmbilAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull AmbilAdapter.ViewHolder holder, int position) {
         final ProdukModel data = list.get(position);
+        DecimalFormat formatter = (DecimalFormat) NumberFormat.getInstance(Locale.US);
+        DecimalFormatSymbols symbols = formatter.getDecimalFormatSymbols();
+
+        symbols.setGroupingSeparator(' ');
+        formatter.setDecimalFormatSymbols(symbols);
+        BigDecimal bd = new BigDecimal(data.getPerHarga());
+
         holder.nama.setText(list.get(position).getNama());
-        holder.harga.setText("RP " + data.getPerHarga());
+
+        holder.harga.setText("RP " + formatter.format(bd.longValue()));
         holder.berat.setText(data.getBerat());
         holder.jenis.setText(data.getJenis());
         holder.catatan.setText(data.getCatatan());
