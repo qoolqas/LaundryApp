@@ -3,7 +3,7 @@ package com.q.laundryapp.model.read;
 import java.util.List;
 import com.google.gson.annotations.SerializedName;
 
-public class ReadResponse{
+public class ProdukResponse {
 
 	@SerializedName("result")
 	private List<ResultItem> result;

@@ -5,9 +5,10 @@ import android.util.Log;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.q.bakeryapp.connection.Client;
-import com.q.bakeryapp.connection.Service;
-import com.q.bakeryapp.model.produk.ProdukResponse;
+
+import com.q.laundryapp.connection.Client;
+import com.q.laundryapp.connection.Service;
+import com.q.laundryapp.model.read.ProdukResponse;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -20,7 +21,7 @@ public class ViewModel extends androidx.lifecycle.ViewModel {
     void loadProduct() {
 
         Service service = Client.getClient().create(Service.class);
-        Call<ProdukResponse> call = service.getProduk();
+        Call<ProdukResponse> call = service.getLaundry();
         call.enqueue(new Callback<ProdukResponse>() {
 
             @Override
@@ -46,7 +47,7 @@ public class ViewModel extends androidx.lifecycle.ViewModel {
     void loadBasah() {
 
         Service service = Client.getClient().create(Service.class);
-        Call<ProdukResponse> call = service.getProdukKategori("basah");
+        Call<ProdukResponse> call = service.getStatus("1");
         call.enqueue(new Callback<ProdukResponse>() {
 
             @Override
@@ -62,7 +63,7 @@ public class ViewModel extends androidx.lifecycle.ViewModel {
         });
     }
 
-    public LiveData<ProdukResponse> liveGetBasah() {
+    public LiveData<ProdukResponse> liveGetStatus() {
         if (produk == null) {
             produk = new MutableLiveData<>();
             loadBasah();
@@ -72,7 +73,7 @@ public class ViewModel extends androidx.lifecycle.ViewModel {
     void loadKering() {
 
         Service service = Client.getClient().create(Service.class);
-        Call<ProdukResponse> call = service.getProdukKategori("kering");
+        Call<ProdukResponse> call = service.getHistori("1");
         call.enqueue(new Callback<ProdukResponse>() {
 
             @Override
@@ -88,7 +89,7 @@ public class ViewModel extends androidx.lifecycle.ViewModel {
         });
     }
 
-    public LiveData<ProdukResponse> liveGetKering() {
+    public LiveData<ProdukResponse> liveGetHistori() {
         if (produk == null) {
             produk = new MutableLiveData<>();
             loadKering();
