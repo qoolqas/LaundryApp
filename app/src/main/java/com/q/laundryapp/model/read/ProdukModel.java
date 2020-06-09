@@ -1,8 +1,11 @@
 package com.q.laundryapp.model.read;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.SerializedName;
 
-public class ProdukModel {
+public class ProdukModel implements Parcelable {
 
 	@SerializedName("per_harga")
 	private String perHarga;
@@ -178,4 +181,59 @@ public class ProdukModel {
 			",status = '" + status + '\'' + 
 			"}";
 		}
+
+	@Override
+	public int describeContents() {
+		return 0;
+	}
+
+	@Override
+	public void writeToParcel(Parcel dest, int flags) {
+		dest.writeString(this.perHarga);
+		dest.writeString(this.tambahan);
+		dest.writeString(this.catatan);
+		dest.writeString(this.createdAt);
+		dest.writeString(this.history);
+		dest.writeString(this.alamat);
+		dest.writeString(this.total);
+		dest.writeString(this.nama);
+		dest.writeString(this.updatedAt);
+		dest.writeString(this.berat);
+		dest.writeString(this.jenis);
+		dest.writeString(this.barangId);
+		dest.writeString(this.telfon);
+		dest.writeString(this.status);
+	}
+
+	public ProdukModel() {
+	}
+
+	protected ProdukModel(Parcel in) {
+		this.perHarga = in.readString();
+		this.tambahan = in.readString();
+		this.catatan = in.readString();
+		this.createdAt = in.readString();
+		this.history = in.readString();
+		this.alamat = in.readString();
+		this.total = in.readString();
+		this.nama = in.readString();
+		this.updatedAt = in.readString();
+		this.berat = in.readString();
+		this.jenis = in.readString();
+		this.barangId = in.readString();
+		this.telfon = in.readString();
+		this.status = in.readString();
+	}
+
+	public static final Parcelable.Creator<ProdukModel> CREATOR = new Parcelable.Creator<ProdukModel>() {
+		@Override
+		public ProdukModel createFromParcel(Parcel source) {
+			return new ProdukModel(source);
+		}
+
+		@Override
+		public ProdukModel[] newArray(int size) {
+			return new ProdukModel[size];
+		}
+	};
 }

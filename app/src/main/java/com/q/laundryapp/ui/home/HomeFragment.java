@@ -25,6 +25,9 @@ public class HomeFragment extends Fragment {
         CardView cardAmbil = root.findViewById(R.id.home_ambil);
         cardAmbil.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_nav_home_to_nav_slideshow, null));
 
+        CardView cardStatus = root.findViewById(R.id.home_status);
+        cardStatus.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_nav_home_to_nav_gallery, null));
+
         return root;
     }
 }
