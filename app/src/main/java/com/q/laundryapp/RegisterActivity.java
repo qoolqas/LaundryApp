@@ -48,10 +48,8 @@ public class RegisterActivity extends AppCompatActivity {
 
                     return;
                 }
-                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class)
-                        .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
-                finish();
+                loading = ProgressDialog.show(mContext, null, "Harap Tunggu...", true, false);
+                register();
 
 
             }

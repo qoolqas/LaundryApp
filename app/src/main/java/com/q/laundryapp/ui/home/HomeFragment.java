@@ -1,22 +1,15 @@
 package com.q.laundryapp.ui.home;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.Navigation;
 
-import com.q.laundryapp.JenisActivity;
-import com.q.laundryapp.MainActivity;
 import com.q.laundryapp.R;
 
 public class HomeFragment extends Fragment {
@@ -24,8 +17,14 @@ public class HomeFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_home, container, false);
-        CardView cardTransaksi = root.findViewById(R.id.cardTransaksi);
-        cardTransaksi.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_nav_home_to_nav_gallery, null));
+        CardView cardAmbil = root.findViewById(R.id.home_ambil);
+        cardAmbil.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_nav_home_to_nav_slideshow, null));
+
+        CardView cardStatus = root.findViewById(R.id.home_status);
+        cardStatus.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_nav_home_to_nav_gallery, null));
+
+        CardView cardHistori = root.findViewById(R.id.home_histori);
+        cardHistori.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_nav_home_to_nav_histori, null));
 
         return root;
     }
