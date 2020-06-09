@@ -3,6 +3,7 @@ package com.q.laundryapp.connection;
 
 
 import com.q.laundryapp.model.login.LoginResponse;
+import com.q.laundryapp.model.read.ReadResponse;
 import com.q.laundryapp.model.register.RegisterResponse;
 
 import java.util.Map;
@@ -22,11 +23,14 @@ import retrofit2.http.Query;
 public interface Service {
 
 
-//    @GET("read.php")
-//    Call<ProdukResponse> getProduk();
-//
-//    @GET("read.php")
-//    Call<ProdukResponse> getProdukKategori(@Query("kategori") String kategori);
+    @GET("read.php")
+    Call<ReadResponse> getLaundry();
+
+    @GET("read.php")
+    Call<ReadResponse> getStatus(@Query("status") String status);
+
+    @GET("read.php")
+    Call<ReadResponse> getHistori(@Query("histori") String status);
 
     @FormUrlEncoded
     @POST("login.php")

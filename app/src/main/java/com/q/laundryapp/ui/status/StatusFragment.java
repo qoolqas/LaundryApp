@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment;
 
 import com.q.laundryapp.R;
 
-public class JenisFragment extends Fragment {
+public class StatusFragment extends Fragment {
 
 
 

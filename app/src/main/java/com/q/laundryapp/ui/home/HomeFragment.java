@@ -15,8 +15,6 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.Navigation;
 
-import com.q.laundryapp.JenisActivity;
-import com.q.laundryapp.MainActivity;
 import com.q.laundryapp.R;
 
 public class HomeFragment extends Fragment {
@@ -24,8 +22,8 @@ public class HomeFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_home, container, false);
-        CardView cardTransaksi = root.findViewById(R.id.home_buat);
-        cardTransaksi.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_nav_home_to_nav_gallery, null));
+        CardView cardStatus = root.findViewById(R.id.home_status);
+        cardStatus.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_nav_home_to_nav_gallery, null));
 
         return root;
     }
