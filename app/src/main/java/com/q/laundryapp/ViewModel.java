@@ -47,7 +47,7 @@ public class ViewModel extends androidx.lifecycle.ViewModel {
     void loadBasah() {
 
         Service service = Client.getClient().create(Service.class);
-        Call<ProdukResponse> call = service.getStatus("1");
+        Call<ProdukResponse> call = service.getStatus("0");
         call.enqueue(new Callback<ProdukResponse>() {
 
             @Override
@@ -73,7 +73,7 @@ public class ViewModel extends androidx.lifecycle.ViewModel {
     void loadKering() {
 
         Service service = Client.getClient().create(Service.class);
-        Call<ProdukResponse> call = service.getHistori("1");
+        Call<ProdukResponse> call = service.getStatus("1");
         call.enqueue(new Callback<ProdukResponse>() {
 
             @Override

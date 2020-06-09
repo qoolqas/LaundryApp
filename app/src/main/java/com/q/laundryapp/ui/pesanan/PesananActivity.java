@@ -51,7 +51,7 @@ public class PesananActivity extends AppCompatActivity {
         tambahan = findViewById(R.id.createTambahan);
         catatan = findViewById(R.id.createCatatan);
         simpan = findViewById(R.id.bt_simpan);
-
+        kategori = findViewById(R.id.rd_kategori);
         ekspres = findViewById(R.id.rd_ekspress);
         normal = findViewById(R.id.rd_normal);
 

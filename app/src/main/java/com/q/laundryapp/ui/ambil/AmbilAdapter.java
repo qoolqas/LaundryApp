@@ -79,9 +79,9 @@ public class AmbilAdapter extends RecyclerView.Adapter<AmbilAdapter.ViewHolder> 
         holder.harga.setText("Total : " + "RP " + formatter.format(bd.longValue()));
         holder.berat.setText(data.getBerat() + "Kg");
         holder.jenis.setText(data.getJenis());
-        holder.catatan.setText(data.getCatatan());
-        holder.alamat.setText(data.getAlamat());
-        holder.created.setText(data.getCreatedAt());
+        holder.catatan.setText("Catatan "+data.getCatatan());
+        holder.alamat.setText("Alamat"+data.getAlamat());
+        holder.created.setText("Dipesan Pada : "+data.getCreatedAt());
         holder.telfon.setText(formattedNumber);
 
     }
@@ -121,7 +121,7 @@ public class AmbilAdapter extends RecyclerView.Adapter<AmbilAdapter.ViewHolder> 
                                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int which) {
                                         Service service = Client.getClient().create(Service.class);
-                                        Call<EditResponse> delete = service.update(data.getBerat(), data.getJenis(), data.getPerHarga(), data.getTambahan(), data.getCatatan(), data.getNama(), data.getAlamat(), data.getTelfon(), "0", "1", data.getBarangId());
+                                        Call<EditResponse> delete = service.update(data.getBerat(), data.getJenis(), data.getPerHarga(), data.getTambahan(), data.getCatatan(), data.getNama(), data.getAlamat(), data.getTelfon(), "1", "1", data.getBarangId());
                                         delete.enqueue(new Callback<EditResponse>() {
                                             @Override
                                             public void onResponse(Call<EditResponse> call, Response<EditResponse> response) {

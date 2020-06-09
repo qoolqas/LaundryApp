@@ -76,11 +76,10 @@ public class StatusAdapter extends RecyclerView.Adapter<StatusAdapter.ViewHolder
         holder.harga.setText("Total : " + "RP " + formatter.format(bd.longValue()));
         holder.berat.setText(data.getBerat() + "Kg");
         holder.jenis.setText(data.getJenis());
-        holder.catatan.setText(data.getCatatan());
-        holder.alamat.setText(data.getAlamat());
-        holder.created.setText(data.getCreatedAt());
+        holder.catatan.setText("Catatan "+data.getCatatan());
+        holder.alamat.setText("Alamat"+data.getAlamat());
+        holder.created.setText("Dipesan Pada : "+data.getCreatedAt());
         holder.telfon.setText(formattedNumber);
-
     }
 
     @Override
