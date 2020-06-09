@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ProgressBar;
 
 import com.q.laundryapp.R;
@@ -33,6 +34,7 @@ public class HistoriFragment extends Fragment {
     private LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
     private ProgressBar pb;
     private List<ProdukModel> produk = new ArrayList<>();
+    Button manage;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -52,6 +54,9 @@ public class HistoriFragment extends Fragment {
         initRV();
         getData();
         pb.setVisibility(View.VISIBLE);
+        manage = view.findViewById(R.id.buttonAmbil);
+        manage.setVisibility(View.GONE);
+
     }
 
     private void getData() {

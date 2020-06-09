@@ -25,17 +25,25 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_nav_home_to_nav_histori"
+            app:destination="@id/nav_histori" />
     </fragment>
 
     <fragment
         android:id="@+id/nav_gallery"
         android:name="com.q.laundryapp.ui.status.StatusFragment"
-        android:label="@string/menu_jenis"
+        android:label="Manage"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.q.laundryapp.ui.ambil.AmbilFragment"
-        android:label="@string/menu_slideshow"
+        android:label="Pengambilan"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/nav_histori"
+        android:name="com.q.laundryapp.ui.ambil.AmbilFragment"
+        android:label="Histori"
+        tools:layout="@layout/fragment_histori" />
 </navigation>
