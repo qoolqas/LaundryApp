@@ -107,7 +107,7 @@
                     android:orientation="horizontal">
 
                     <RadioButton
-                        android:id="@+id/rd_basah"
+                        android:id="@+id/rd_ekspress"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
@@ -115,7 +115,7 @@
                         android:textColor="@color/black" />
 
                     <RadioButton
-                        android:id="@+id/rd_kering"
+                        android:id="@+id/rd_normal"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
@@ -180,7 +180,7 @@
                 app:layout_constraintVertical_bias="0.0">
 
                 <EditText
-                    android:id="@+id/rotiDeskripsi"
+                    android:id="@+id/createCatatan"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="left|top"

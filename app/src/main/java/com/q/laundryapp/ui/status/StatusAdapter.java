@@ -73,7 +73,7 @@ public class StatusAdapter extends RecyclerView.Adapter<StatusAdapter.ViewHolder
         String formattedNumber = PhoneNumberUtils.formatNumber(data.getTelfon());
         holder.nama.setText(list.get(position).getNama());
 
-        holder.harga.setText("RP " + formatter.format(bd.longValue()));
+        holder.harga.setText("Total : " + "RP " + formatter.format(bd.longValue()));
         holder.berat.setText(data.getBerat() + "Kg");
         holder.jenis.setText(data.getJenis());
         holder.catatan.setText(data.getCatatan());
