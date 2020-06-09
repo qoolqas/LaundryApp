@@ -56,7 +56,7 @@ public class StatusAdapter extends RecyclerView.Adapter<StatusAdapter.ViewHolder
     @Override
     public StatusAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.item_card_ambil, parent, false);
+        View view = layoutInflater.inflate(R.layout.item_card_manage, parent, false);
         return new ViewHolder(view);
     }
 

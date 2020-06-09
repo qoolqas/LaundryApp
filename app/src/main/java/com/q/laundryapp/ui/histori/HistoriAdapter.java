@@ -56,7 +56,7 @@ public class HistoriAdapter extends RecyclerView.Adapter<HistoriAdapter.ViewHold
     @Override
     public HistoriAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.item_card_ambil, parent, false);
+        View view = layoutInflater.inflate(R.layout.item_card_manage, parent, false);
         return new ViewHolder(view);
     }
 
@@ -106,6 +106,7 @@ public class HistoriAdapter extends RecyclerView.Adapter<HistoriAdapter.ViewHold
             nama = itemView.findViewById(R.id.card_nama);
             harga = itemView.findViewById(R.id.card_total);
             btnAmbil = itemView.findViewById(R.id.buttonAmbil);
+            btnAmbil.setVisibility(View.GONE);
 
             btnAmbil.setOnClickListener(new View.OnClickListener() {
                 @Override

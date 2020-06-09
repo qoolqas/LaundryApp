@@ -34,7 +34,6 @@ public class HistoriFragment extends Fragment {
     private LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
     private ProgressBar pb;
     private List<ProdukModel> produk = new ArrayList<>();
-    Button manage;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -54,8 +53,7 @@ public class HistoriFragment extends Fragment {
         initRV();
         getData();
         pb.setVisibility(View.VISIBLE);
-        manage = view.findViewById(R.id.buttonAmbil);
-        manage.setVisibility(View.GONE);
+
 
     }
 

@@ -34,7 +34,7 @@ public interface Service {
     Call<ProdukResponse> getStatus(@Query("status") String status);
 
     @GET("read.php")
-    Call<ProdukResponse> getHistori(@Query("histori") String status);
+    Call<ProdukResponse> getHistori(@Query("histori") String histori);
 
     @FormUrlEncoded
     @POST("login.php")

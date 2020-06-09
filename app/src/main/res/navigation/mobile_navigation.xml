@@ -27,7 +27,11 @@
             app:popExitAnim="@anim/slide_out_right"/>
         <action
             android:id="@+id/action_nav_home_to_nav_histori"
-            app:destination="@id/nav_histori" />
+            app:destination="@id/nav_histori"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
 
     <fragment
@@ -43,7 +47,7 @@
         tools:layout="@layout/fragment_slideshow" />
     <fragment
         android:id="@+id/nav_histori"
-        android:name="com.q.laundryapp.ui.ambil.AmbilFragment"
+        android:name="com.q.laundryapp.ui.histori.HistoriFragment"
         android:label="Histori"
         tools:layout="@layout/fragment_histori" />
 </navigation>
