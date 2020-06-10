@@ -31,6 +31,9 @@ import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.text.NumberFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
@@ -63,7 +66,7 @@ public class AmbilAdapter extends RecyclerView.Adapter<AmbilAdapter.ViewHolder> 
         return new ViewHolder(view);
     }
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint({"SetTextI18n", "SimpleDateFormat"})
     @Override
     public void onBindViewHolder(@NonNull AmbilAdapter.ViewHolder holder, int position) {
         final ProdukModel data = list.get(position);
@@ -76,12 +79,15 @@ public class AmbilAdapter extends RecyclerView.Adapter<AmbilAdapter.ViewHolder> 
         String formattedNumber = PhoneNumberUtils.formatNumber(data.getTelfon());
         holder.nama.setText(list.get(position).getNama());
 
+        String date_before = data.getCreatedAt();
+        String date_after = formateDateFromstring("yyyy-MM-dd hh:mm:ss", "dd, MMM yyyy", date_before);
+        holder.created.setText("Dipesan Pada : "+date_after);
         holder.harga.setText("Total : " + "RP " + formatter.format(bd.longValue()));
         holder.berat.setText(data.getBerat() + "Kg");
         holder.jenis.setText(data.getJenis());
         holder.catatan.setText("Catatan "+data.getCatatan());
-        holder.alamat.setText("Alamat"+data.getAlamat());
-        holder.created.setText("Dipesan Pada : "+data.getCreatedAt());
+        holder.alamat.setText("Alamat "+data.getAlamat());
+
         holder.telfon.setText(formattedNumber);
 
     }
@@ -153,5 +159,24 @@ public class AmbilAdapter extends RecyclerView.Adapter<AmbilAdapter.ViewHolder> 
                 }
             });
         }
+    }
+    public static String formateDateFromstring(String inputFormat, String outputFormat, String inputDate){
+
+        Date parsed = null;
+        String outputDate = "";
+
+        SimpleDateFormat df_input = new SimpleDateFormat(inputFormat, java.util.Locale.getDefault());
+        SimpleDateFormat df_output = new SimpleDateFormat(outputFormat, java.util.Locale.getDefault());
+
+        try {
+            parsed = df_input.parse(inputDate);
+            outputDate = df_output.format(parsed);
+
+        } catch (ParseException e) {
+            Log.d("tag", "ParseException - dateFormat");
+        }
+
+        return outputDate;
+
     }
 }
