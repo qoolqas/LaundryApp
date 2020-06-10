@@ -73,14 +73,13 @@ public class StatusAdapter extends RecyclerView.Adapter<StatusAdapter.ViewHolder
         String formattedNumber = PhoneNumberUtils.formatNumber(data.getTelfon());
         holder.nama.setText(list.get(position).getNama());
 
-        holder.harga.setText("RP " + formatter.format(bd.longValue()));
+        holder.harga.setText("Total : " + "RP " + formatter.format(bd.longValue()));
         holder.berat.setText(data.getBerat() + "Kg");
         holder.jenis.setText(data.getJenis());
-        holder.catatan.setText(data.getCatatan());
-        holder.alamat.setText(data.getAlamat());
-        holder.created.setText(data.getCreatedAt());
+        holder.catatan.setText("Catatan "+data.getCatatan());
+        holder.alamat.setText("Alamat"+data.getAlamat());
+        holder.created.setText("Dipesan Pada : "+data.getCreatedAt());
         holder.telfon.setText(formattedNumber);
-
     }
 
     @Override
@@ -121,6 +120,7 @@ public class StatusAdapter extends RecyclerView.Adapter<StatusAdapter.ViewHolder
                                 case R.id.edit:
                                     Intent intent = new Intent(produkActivity.getActivity(), PesananActivity.class);
                                     intent.putExtra("id", String.valueOf(data.getBarangId()));
+                                    intent.putExtra("edit", "1");
                                     intent.putExtra("data", data);
                                     produkActivity.getActivity().startActivity(intent);
                                     return true;

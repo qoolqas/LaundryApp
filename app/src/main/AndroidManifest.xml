@@ -25,12 +25,6 @@
         <activity
             android:name=".LoginActivity"
             android:theme="@style/AppTheme.Material">
-
-        </activity>
-        <activity
-            android:name=".DrawerMainActivity"
-            android:label="@string/title_activity_drawer_main"
-            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,12 +33,13 @@
 
         </activity>
         <activity
-            android:name=".CartActivity"
-            android:theme="@style/AppTheme.Material" />
-        <activity
-            android:name=".PopupJenisActivity"
-            android:theme="@style/AppTheme.Material_Transparent" />
-        <activity android:name=".MainActivity" />
+            android:name=".DrawerMainActivity"
+            android:label="@string/title_activity_drawer_main"
+            android:theme="@style/AppTheme.NoActionBar">
+
+
+        </activity>
+
     </application>
 
 </manifest>

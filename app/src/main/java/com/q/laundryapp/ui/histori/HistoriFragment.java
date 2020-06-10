@@ -83,9 +83,4 @@ public class HistoriFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        getData();
-    }
 }

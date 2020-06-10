@@ -73,12 +73,12 @@ public class HistoriAdapter extends RecyclerView.Adapter<HistoriAdapter.ViewHold
         String formattedNumber = PhoneNumberUtils.formatNumber(data.getTelfon());
         holder.nama.setText(list.get(position).getNama());
 
-        holder.harga.setText("RP " + formatter.format(bd.longValue()));
+        holder.harga.setText("Total : " + "RP " + formatter.format(bd.longValue()));
         holder.berat.setText(data.getBerat() + "Kg");
         holder.jenis.setText(data.getJenis());
-        holder.catatan.setText(data.getCatatan());
-        holder.alamat.setText(data.getAlamat());
-        holder.created.setText(data.getCreatedAt());
+        holder.catatan.setText("Catatan "+data.getCatatan());
+        holder.alamat.setText("Alamat"+data.getAlamat());
+        holder.created.setText("Dipesan Pada : "+data.getCreatedAt());
         holder.telfon.setText(formattedNumber);
 
     }
