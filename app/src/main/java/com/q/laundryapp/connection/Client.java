@@ -9,7 +9,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Client {
-    static String domain = "192.168.1.13:8080";
+    static String domain = "192.168.1.2:8080";
     private static final String BASE_URL_API = "http://"+domain+"/laundry/";
 
     private static Retrofit retrofit = null;

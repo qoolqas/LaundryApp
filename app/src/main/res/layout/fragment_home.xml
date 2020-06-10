@@ -6,8 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_water"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <include
+        android:id="@+id/include"
         layout="@layout/item_grid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,4 +22,5 @@
         tools:layout_editor_absoluteX="8dp">
 
     </include>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
