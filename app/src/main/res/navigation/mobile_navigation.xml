@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.q.laundryapp.ui.home.HomeFragment"
+        android:name="com.example.laundryapp.ui.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home">
 
@@ -36,18 +36,18 @@
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.q.laundryapp.ui.status.StatusFragment"
+        android:name="com.example.laundryapp.ui.status.StatusFragment"
         android:label="Manage"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.q.laundryapp.ui.ambil.AmbilFragment"
+        android:name="com.example.laundryapp.ui.ambil.AmbilFragment"
         android:label="Pengambilan"
         tools:layout="@layout/fragment_slideshow" />
     <fragment
         android:id="@+id/nav_histori"
-        android:name="com.q.laundryapp.ui.histori.HistoriFragment"
+        android:name="com.example.laundryapp.ui.histori.HistoriFragment"
         android:label="Histori"
         tools:layout="@layout/fragment_histori" />
 </navigation>

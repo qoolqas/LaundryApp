@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.q.laundryapp">
+    package="com.example.laundryapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -13,30 +13,30 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.pesanan.PesananActivity"
+        <activity android:name="com.example.laundryapp.ui.pesanan.PesananActivity"
             android:theme="@style/AppTheme.Material">
 
         </activity>
         <activity
-            android:name=".RegisterActivity"
+            android:name="com.example.laundryapp.RegisterActivity"
             android:theme="@style/AppTheme.Material">
 
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name="com.example.laundryapp.LoginActivity"
             android:theme="@style/AppTheme.Material">
-
-
-        </activity>
-        <activity
-            android:name=".DrawerMainActivity"
-            android:label="@string/title_activity_drawer_main"
-            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity
+            android:name="com.example.laundryapp.DrawerMainActivity"
+            android:label="@string/title_activity_drawer_main"
+            android:theme="@style/AppTheme.NoActionBar">
+
 
         </activity>
 
