@@ -41,7 +41,7 @@ public class AmbilAdapter extends RecyclerView.Adapter<AmbilAdapter.ViewHolder> 
     private AmbilFragment produkActivity;
     private Context context;
     private List<ProdukModel> list;
-    String domain = "192.168.1.9:8080";
+    String domain = "192.168.1.4:8080";
 
 
     public AmbilAdapter(AmbilFragment produkActivity, Context context) {
